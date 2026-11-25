@@ -38,11 +38,6 @@ php artisan storage:link
 php artisan migrate --seed
 ```
 
-### 3. Default Admin Account (Seeded)
-- **Email**: `admin@softyxsip.local`
-- **Password**: `password`
-- **URL**: `/login` -> redirects to `/admin`
-
 ---
 
 ## Clothing Store Redirect Architecture
