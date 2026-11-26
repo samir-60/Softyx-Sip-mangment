@@ -1,0 +1,5 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "pnpm run build && mkdir -p dist/public && cp index.html dist/index.html && cp -r public/videos public/images dist/public/",
+  "outputDirectory": "dist"
+}

@@ -1,15 +1,24 @@
 import { PageProps as InertiaPageProps } from '@inertiajs/core';
 import { AxiosInstance } from 'axios';
-import { route as ziggyRoute } from 'ziggy-js';
-import { PageProps as AppPageProps } from './';
+import { PageProps as AppPageProps } from './index.d';
 
 declare global {
     interface Window {
         axios: AxiosInstance;
     }
 
+    interface ZiggyRouter {
+        current: (name?: string, params?: Record<string, unknown>) => boolean;
+        params: Record<string, unknown>;
+    }
+
+    interface ZiggyRouteFn {
+        (): ZiggyRouter;
+        (name: string, params?: Record<string, unknown> | number | string, absolute?: boolean): string;
+    }
+
     /* eslint-disable no-var */
-    var route: typeof ziggyRoute;
+    var route: ZiggyRouteFn;
 }
 
 declare module '@inertiajs/core' {
